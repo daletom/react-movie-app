@@ -13,3 +13,18 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
+
+.movie-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.movie {
+	background-color: #373b69;
+	margin: 1rem;
+	width: 250px;
+}
+
+.movie img {
+	max-width: 100%;
+}
