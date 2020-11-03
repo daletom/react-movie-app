@@ -1,5 +1,11 @@
 import React from 'react';
 
-const Movie = () => <div classname='movie'> This is a movie component</div>;
+const IMG_API = 'https://image.tmdb.org/t/p/w1280';
+
+const Movie = ({title, poster_path, overview, vote_average}) => (
+	<div classname='movie'>
+		<img src={IMG_API + poster_path} alt={title}></img>
+	</div>
+);
 
 export default Movie;
