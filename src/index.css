@@ -24,8 +24,9 @@ code {
 	border-radius: 3px;
 	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 	margin: 1rem;
+	position: relative;
 	overflow: hidden;
-	width: 250px;
+	width: 300px;
 }
 .movie-info {
 	display: flex;
@@ -40,4 +41,25 @@ code {
 
 .movie img {
 	max-width: 100%;
+}
+
+.movie-over {
+	background-color: white;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1);
+	color: #22254b;
+	padding: 1rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	max-height: 100%;
+	transform: translateY(102%);
+	transition: transform 0.3s ease-in-out;
+}
+
+.movie:hover .movie-over {
+	transform: translateY(0%);
 }
