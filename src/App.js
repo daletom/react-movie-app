@@ -37,7 +37,7 @@ function App() {
 	return (
 		<>
 			<header>
-				<div className='header-text'>Movie Search build in React</div>
+				<div className='header-text'>Movie search website built in React</div>
 				<form onSubmit={handleOnSubmit}>
 					<input
 						className='search'
