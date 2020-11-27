@@ -1,4 +1,4 @@
-### Movie search app built in React.
+# Movie search app built in React.
 
 A project based on a [search app built by Florin Pop](https://www.youtube.com/watch?v=sZ0bZGfg_m4)
 
