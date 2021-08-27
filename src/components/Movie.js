@@ -1,10 +1,10 @@
 import React from 'react';
 import Imgix from 'react-imgix';
 
-const IMG_API =
-	'https://jamie-dawson.imgix.net/https://image.tmdb.org/t/p/w1280';
+// const IMG_API =
+// 	'https://jamie-dawson.imgix.net/https://image.tmdb.org/t/p/w1280';
 
-const IMGIX_PARAMS = '?w=300&h=450';
+// const IMGIX_PARAMS = '?w=300&h=450';
 
 const setVoteClass = (vote) => {
 	if (vote >= 8) {
@@ -16,20 +16,16 @@ const setVoteClass = (vote) => {
 	}
 };
 
-let pass = 'can I pass this';
-
 const Movie = ({title, poster_path, overview, vote_average}) => (
 	<div className='movie'>
-		<Imgix src='https://assets.imgix.net/examples/pione.jpg' sizes='100vw' />
-
-		<img
+		<Imgix
 			src={
-				poster_path
-					? IMG_API + poster_path + IMGIX_PARAMS
-					: 'https://images.unsplash.com/photo-1538152911114-73f1aa6d6128?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80'
+				'https://jamie-dawson.imgix.net/image.tmdb.org/t/p/w1280/' + poster_path
 			}
-			alt={title}
-		></img>
+			width={300}
+			height={450}
+		/>
+
 		<div className='movie-info'>
 			<h3>{title}</h3>
 			<span className={`tag ${setVoteClass(vote_average)}`}>
