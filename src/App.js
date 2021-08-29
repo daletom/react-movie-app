@@ -37,7 +37,9 @@ function App() {
 	return (
 		<>
 			<header>
-				<div className='header-text'>Movie search website built in React</div>
+				<div className='header-text'>
+					Movie search website built in React - Imgix
+				</div>
 				<form onSubmit={handleOnSubmit}>
 					<input
 						className='search'
