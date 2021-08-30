@@ -9,6 +9,7 @@ const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${process.
 function App() {
 	const [movies, setMovies] = useState([]);
 	const [searchTerm, setSearchTerm] = useState('');
+	let [monoValue, monoValueChange] = useState('');
 
 	useEffect(() => {
 		getMovies(FEATURED_API);
@@ -34,11 +35,23 @@ function App() {
 		setSearchTerm(e.target.value);
 	};
 
+	const checkMonoValue = (e) => {
+		if (e === '') {
+			monoValueChange('&monochrome=909090');
+		} else {
+			monoValueChange('');
+		}
+	};
+
 	return (
 		<>
 			<header>
 				<div className='header-text'>
-					Movie search website built in React - Imgix
+					Movie search website built in React - Imgix{' '}
+					<button class='button' onClick={() => checkMonoValue(monoValue)}>
+						{' '}
+						Time Travel
+					</button>
 				</div>
 				<form onSubmit={handleOnSubmit}>
 					<input
@@ -50,18 +63,14 @@ function App() {
 					/>
 				</form>
 			</header>
-
 			<div className='movie-container'>
 				{movies.length > 0 &&
-					movies.map((movie) => <Movie key={movie.id} {...movie} />)}
+					movies.map((movie) => (
+						<Movie key={movie.id} {...movie} mono={monoValue} />
+					))}
 			</div>
 		</>
 	);
 }
 
 export default App;
-
-// https://developers.themoviedb.org/3/getting-started/introduction
-// set up api
-
-//30:25
